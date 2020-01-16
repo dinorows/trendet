@@ -1,5 +1,7 @@
 # trendet - is a Python package for trend detection on stock time series data
 
+dino modified the code so that it works with pip install investpy==0.9.7
+
 [![Python Version](https://img.shields.io/pypi/pyversions/trendet.svg)](https://pypi.org/project/trendet/)
 [![PyPi Version](https://img.shields.io/pypi/v/trendet.svg)](https://pypi.org/project/trendet/)
 [![Package Status](https://img.shields.io/pypi/status/trendet.svg)](https://pypi.org/project/trendet/)
