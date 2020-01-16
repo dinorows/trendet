@@ -6,7 +6,9 @@
 __author__ = 'Alvaro Bartolome @ alvarob96 on GitHub'
 __version__ = '0.5'
 
-from investpy import get_historical_data, get_equity_countries
+#~dk
+#from investpy import get_historical_data, get_equity_countries
+from investpy import get_stock_historical_data, get_stock_countries
 
 import numpy as np
 import pandas as pd
@@ -60,7 +62,9 @@ def identify_trends(equity, country, from_date, to_date, window_size=5, trend_li
     if country and not isinstance(country, str):
         raise ValueError("country argument is mandatory and needs to be a `str`.")
 
-    if isinstance(country, str) and country not in get_equity_countries():
+    #~dk
+    #if isinstance(country, str) and country not in get_equity_countries():
+    if isinstance(country, str) and country not in get_stock_countries():
         raise ValueError("introduced country is not a valid one, check valid equity countries in "
                          "`investpy.get_equity_countries()`.")
 
@@ -106,7 +110,16 @@ def identify_trends(equity, country, from_date, to_date, window_size=5, trend_li
         raise ValueError('identify should be a `str` contained in [both, up, down]!')
 
     try:
-        df = get_historical_data(equity=str(equity),
+    try:
+        #~dk
+        #df = get_historical_data(equity=str(equity),
+        #                         country=str(country),
+        #                         from_date=from_date,
+        #                         to_date=to_date,
+        #                         as_json=False,
+        #                         order='ascending',
+        #                         debug=False)
+        df = get_stock_historical_data(stock=str(equity),
                                  country=str(country),
                                  from_date=from_date,
                                  to_date=to_date,
@@ -298,7 +311,9 @@ def identify_all_trends(equity, country, from_date, to_date, window_size=5, iden
     if country and not isinstance(country, str):
         raise ValueError("country argument is mandatory and needs to be a `str`.")
 
-    if isinstance(country, str) and country not in get_equity_countries():
+    #~dk
+    #if isinstance(country, str) and country not in get_equity_countries():
+    if isinstance(country, str) and country not in get_stock_countries():
         raise ValueError("introduced country is not a valid one, check valid equity countries in "
                          "`investpy.get_equity_countries()`.")
 
@@ -331,7 +346,15 @@ def identify_all_trends(equity, country, from_date, to_date, window_size=5, iden
         raise ValueError('identify should be a `str` contained in [both, up, down]!')
 
     try:
-        df = get_historical_data(equity=str(equity),
+        #~dk
+        #df = get_historical_data(equity=str(equity),
+        #                         country=str(country),
+        #                         from_date=from_date,
+        #                         to_date=to_date,
+        #                         as_json=False,
+        #                         order='ascending',
+        #                         debug=False)
+        df = get_stock_historical_data(stock=str(equity),
                                  country=str(country),
                                  from_date=from_date,
                                  to_date=to_date,
